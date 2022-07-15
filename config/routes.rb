@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'gallery' => 'pages#gallery'
   get 'about' => 'pages#about'
+  resources :furnitures, only: [:show, :index]
+  resources :categories, only: [:show]
 end

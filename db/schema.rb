@@ -10,12 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_13_223557) do
+ActiveRecord::Schema.define(version: 2022_07_15_004124) do
 
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
+  end
+
+  create_table "collections", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "furnitures", force: :cascade do |t|
@@ -25,7 +31,11 @@ ActiveRecord::Schema.define(version: 2022_07_13_223557) do
     t.text "description"
     t.integer "category_id"
     t.string "name"
+    t.string "image_general"
+    t.string "image_detail"
+    t.integer "collection_id"
     t.index ["category_id"], name: "index_furnitures_on_category_id"
+    t.index ["collection_id"], name: "index_furnitures_on_collection_id"
   end
 
 end
