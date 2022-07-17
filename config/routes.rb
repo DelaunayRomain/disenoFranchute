@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'gallery' => 'pages#gallery'
   get 'about' => 'pages#about'
+  get 'collection' => 'pages#collection'
   resources :furnitures, only: [:show, :index]
   resources :categories, only: [:show]
   resources :collections, only: [:show]

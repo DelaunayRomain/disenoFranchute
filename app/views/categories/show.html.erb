@@ -1,5 +1,5 @@
 <% @category.furnitures.shuffle.each do |furniture| %>
-<%= furniture.name %>
+<%= link_to furniture.name, furniture_path(furniture) %>
 <%= furniture.description %>
 <%= furniture.dimensions %>
 <%= furniture.category.name %>
