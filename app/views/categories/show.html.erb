@@ -1,4 +1,4 @@
-<% @category.furnitures.each do |furniture| %>
+<% @category.furnitures.shuffle.each do |furniture| %>
 <%= furniture.name %>
 <%= furniture.description %>
 <%= furniture.dimensions %>

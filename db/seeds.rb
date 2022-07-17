@@ -13,8 +13,4 @@
 #Category.create(name: "Escritorio")
 #Category.create(name: "Otros")
 
-#Collection.create(name: "Prototipo")
-
-Furniture.create(name: "Mesa Saphir", dimensions: "altura 55cm, diametro cubierta approx 60cm", description: "Madera tratada con tinta china, papel de oro, y vitrificante.", category_id: 2, image_general: "mesa_lateral/mesa_saphir/general.jpeg", image_detail: "mesa_lateral/mesa_saphir/detail.jpeg", collection_id: 1)
-
-#https://medium.com/@anaharris/how-to-add-image-upload-functionality-to-your-rails-app-9f7fc3f3d042
+# Furniture.create(name: "Mesa Saphir", dimensions: "altura 55cm, diametro cubierta approx 60cm", description: "Madera tratada con tinta china, papel de oro, y vitrificante.", category_id: 2, image_general: "mesa_lateral/mesa_saphir/general.jpeg", image_detail: "mesa_lateral/mesa_saphir/detail.jpeg")
