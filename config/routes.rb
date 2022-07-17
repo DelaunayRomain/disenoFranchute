@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
   resources :furnitures, only: [:show, :index]
   resources :categories, only: [:show]
+  resources :collections, only: [:show]
 end

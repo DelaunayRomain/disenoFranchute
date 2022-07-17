@@ -1,0 +1,8 @@
+<% @furnitures.each do |furniture| %>
+<%= furniture.name %>
+<%= furniture.description %>
+<%= furniture.dimensions %>
+<%= furniture.category.name %>
+<%= image_tag (furniture.image_general), class: "img-responsive"%>
+<%= image_tag (furniture.image_detail), class: "img-responsive"%>
+<% end %>

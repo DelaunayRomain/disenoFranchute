@@ -1,4 +1,4 @@
 class Furniture < ApplicationRecord
-  belong_to :category
-  belong_to :collection
+  belongs_to :category
+  belongs_to :collection
 end

@@ -1,11 +1,11 @@
 class FurnituresController < ApplicationController
 
   def show
-    @furniture = Furnitures.find(params[:id])
+    @furniture = Furniture.find(params[:id])
   end
 
   def index
-    @furnitures = Furnitures.all
+    @furnitures = Furniture.all
   end
 
 end
