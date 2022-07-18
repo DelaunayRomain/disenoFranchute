@@ -1,3 +1,6 @@
+<%= will_paginate @articles, :container => false %>
+
+
 <% @furnitures.shuffle.each do |furniture| %>
 <%= link_to furniture.name, furniture_path(furniture) %>
 <%= furniture.description %>
@@ -6,3 +9,6 @@
 <%= image_tag (furniture.image_general), class: "img-responsive"%>
 <%= image_tag (furniture.image_detail), class: "img-responsive"%>
 <% end %>
+
+
+<%= will_paginate @articles, :container => false %>
