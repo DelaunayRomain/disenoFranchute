@@ -1,6 +1,6 @@
 <%= @furniture.name %>
 <%= @furniture.description %>
 <%= @furniture.dimensions %>
-<%= @furniture.category.name %>
+<%= link_to @category.name, category_path(@category) %>
 <%= image_tag (@furniture.image_general), class: "img-responsive"%>
 <%= image_tag (@furniture.image_detail), class: "img-responsive"%>

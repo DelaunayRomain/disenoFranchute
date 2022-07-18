@@ -2,7 +2,7 @@
 <%= link_to furniture.name, furniture_path(furniture) %>
 <%= furniture.description %>
 <%= furniture.dimensions %>
-<%= furniture.category.name %>
+<%= link_to furniture.category.name, category_path(furniture.category) %>
 <%= image_tag (furniture.image_general), class: "img-responsive"%>
 <%= image_tag (furniture.image_detail), class: "img-responsive"%>
 <% end %>
