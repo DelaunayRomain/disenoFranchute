@@ -1,3 +1,183 @@
 // Place all the styles related to the Furnitures controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+$primary-light: #e8d9c9;
+$primary-dark: #f9d9b8;
+
+
+.furniture {
+  padding: 10rem 0;
+  width: 100%;
+  height: auto;
+  padding-top: 16rem;
+  background-image: linear-gradient(to bottom right, $primary-dark, $primary-light);
+  text-align: center;
+  position: relative;
+
+  &__return {
+    position: absolute;
+    top: 18rem;
+    left: 8rem;
+    font-size: 3rem;
+    color: transparent;
+    z-index: 2;
+
+    &-logo {
+      position: absolute;
+      top: 18rem;
+      left: 8rem;
+      font-size: 3.5rem;
+      color: #fff;
+      z-index: 1;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 6rem;
+    font-size: 7rem;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  &__image {
+    height: 50rem;
+    display: inline-block;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    &--1,
+    &--2 {
+      height: 100%;
+      border-radius: 5px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      overflow: hidden;
+    }
+  }
+
+  &__description,
+  &__dimensions {
+    color: #fff;
+    text-align: center;
+    padding-top: 5rem;
+  }
+
+  &__description {
+    font-size: 3rem;
+  }
+
+  &__dimensions {
+    font-size: 2.2rem;
+  }
+}
+
+
+.furnitures-index {
+  padding-top: 10rem;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom right, $primary-dark, $primary-light);
+  text-align: center;
+
+  &__paginate {
+    display: block;
+    margin-bottom: 10rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__furniture {
+    width: 33%;
+    height: 50rem;
+    padding: 5rem 10rem;
+    position: relative;
+    display: inline-block;
+    transition: all .2s;
+
+    &:hover {
+      transform: scale(104%) translateY(-0.5rem);
+      font-weight: bold;
+    }
+
+    &:active {
+      transform: scale(103%);
+    }
+
+    &:hover &--image {
+      box-shadow: 0px 10px 20px 5px rgba(0,0,0,0.15);
+    }
+
+    &--image {
+      width: 80%;
+      height: 80%;
+      position: absolute;
+      top: 0%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #f0e9e0;
+      border-radius: 100rem;
+      overflow: hidden;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+
+      &-1 {
+        display: block;
+        max-width:100%;
+        max-height:100%;
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &--name {
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 2rem;
+      color: #fff;
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.apple_pagination {
+  background: transparent;
+  //border: 1px solid #e5e5e5;
+  text-align: center;
+  padding-top: 6rem;
+  cursor: default;
+  font-size: 1.3rem;
+
+  a, span
+    {padding: 0.2em 0.3em}
+  .disabled
+    {color: #aaaaaa}
+  .current
+    {font-style: normal;
+    font-weight: bold;
+    background-color: darken(#f1f1f1, 20);
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.5;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    text-shadow: rgba(white, .8) 1px 1px 1px};
+
+  a
+    {text-decoration: none;
+    color: black;
+
+    &:hover, &:focus
+      {text-decoration: underline}
+    }
+}

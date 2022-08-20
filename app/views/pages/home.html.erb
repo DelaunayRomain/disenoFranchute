@@ -1,7 +1,15 @@
-<% @categories.each do |category|%>
-<%= link_to category.name, category_path(category) %>
-<%end%>
-<%= link_to "All furnitures", furnitures_path %>
-<%= link_to "About", about_path %>
-<%= link_to "Gallery", gallery_path %>
-<%= link_to "Abstract Collection 2021", collection_path %>
+
+<section class="home" id="home">
+  <div class="home__left">
+    <%= link_to "Abstract Collection 2021", collection_path, class:"home__left--collection" %>
+  </div>
+  <div class="home__middle">
+    <img src="assets/logo/logo_df.png" alt="logo" class="home__middle--logo">
+    <ul class="home__middle--links">
+      <li><%= link_to "All furnitures", furnitures_path, class: "link" %></li>
+    </ul>
+  </div>
+  <div class="home__right">
+    <%= link_to "Gallery", gallery_path, class: "home__right--gallery" %>
+  </div>
+</section>

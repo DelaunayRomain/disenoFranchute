@@ -4,13 +4,12 @@ class PagesController < ApplicationController
     @categories = Category.all
   end
 
-  def about
-  end
-
   def gallery
+    @categories = Category.all
   end
 
   def collection
+    @categories = Category.all
   end
 
 end

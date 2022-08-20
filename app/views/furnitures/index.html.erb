@@ -1,14 +1,16 @@
-<%= will_paginate @articles, :container => false %>
+<%= render 'layouts/navigation' %>
+<%= render 'layouts/popup', :locals => {:destination => '#furnitures-index'}%>
 
-
-<% @furnitures.shuffle.each do |furniture| %>
-<%= link_to furniture.name, furniture_path(furniture) %>
-<%= furniture.description %>
-<%= furniture.dimensions %>
-<%= link_to furniture.category.name, category_path(furniture.category) %>
-<%= image_tag (furniture.image_general), class: "img-responsive"%>
-<%= image_tag (furniture.image_detail), class: "img-responsive"%>
-<% end %>
-
-
-<%= will_paginate @articles, :container => false %>
+<section class="furnitures-index" id="furnitures-index">
+  <div class="furnitures-index__paginate"><%= will_paginate @furnitures, class: "apple_pagination" %></div>
+  <% @furnitures.shuffle.each do |furniture| %>
+  <div class="furnitures-index__furniture">
+    <div class="furnitures-index__furniture--image">
+      <%= link_to image_tag(furniture.image_general, class: "furnitures-index__furniture--image-1"), furniture_path(furniture)%>
+    </div>
+    <%= link_to furniture.name, furniture_path(furniture), class: "furnitures-index__furniture--name" %>
+  </div>
+  <% end %>
+  <div class="furnitures-index__paginate"><%= will_paginate @furnitures, class: "apple_pagination" %></div>
+  <%= render 'layouts/footer' %>
+</section>

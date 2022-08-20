@@ -1,0 +1,15 @@
+<header class="navigation">
+  <div class="navigation__dropdown">
+    <button class="navigation__link navigation__dropbtn">Productos &#9660;</button>
+    <ul class="navigation__dropdown--content">
+      <li><%= link_to "Todos", furnitures_path, class:"navigation__dropdown--link"%></li>
+    <% @categories.each do |category| %>
+      <li><%= link_to category.name, category_path(category), class:"navigation__dropdown--link" %></li>
+    <%end%>
+    </ul>
+  </div>
+  <a href="#popup" class="navigation__link">nosotros</a>
+  <%= link_to "galeria", gallery_path, class:"navigation__link" %>
+  <%= link_to "colleccion 2021", collection_path, class:"navigation__link" %>
+  <a href="/"><img src="assets/logo/logo_df.png" alt="logo" class="navigation__logo"></a>
+</header>

@@ -1,6 +1,13 @@
-<%= @furniture.name %>
-<%= @furniture.description %>
-<%= @furniture.dimensions %>
-<%= link_to @category.name, category_path(@category) %>
-<%= image_tag (@furniture.image_general), class: "img-responsive"%>
-<%= image_tag (@furniture.image_detail), class: "img-responsive"%>
+<%= render 'layouts/navigation' %>
+<%= render 'layouts/popup', :locals => {:destination => '#furniture'}%>
+
+<section class="furniture" id="furniture">
+  <%= link_to 'Back', :back, class: "furniture__return" %>
+  <p class="furniture__return-logo">&#x21A9;</p>
+  <h1 class="furniture__heading"><%= @furniture.name %></h1>
+  <div class="furniture__image"><%= image_tag (@furniture.image_general), class: "furniture__image--1"%></div>
+  <div class="furniture__image"><%= image_tag (@furniture.image_detail), class: "furniture__image--2"%></div>
+  <p class="furniture__description"><%= @furniture.description %></p>
+  <p class="furniture__dimensions">Dimensiones: <%= @furniture.dimensions %></p>
+</section>
+<%= render 'layouts/footer' %>

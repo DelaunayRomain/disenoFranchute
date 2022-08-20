@@ -1,7 +1,16 @@
-<% @category.furnitures.shuffle.each do |furniture| %>
-<%= link_to furniture.name, furniture_path(furniture) %>
-<%= furniture.description %>
-<%= furniture.dimensions %>
-<%= image_tag (furniture.image_general), class: "img-responsive"%>
-<%= image_tag (furniture.image_detail), class: "img-responsive"%>
-<% end %>
+<%= render 'layouts/navigation' %>
+<%= render 'layouts/popup', :locals => {:destination => '#categories'}%>
+
+<section class="furnitures-index" id="categories">
+  <div class="category__name"><%= @category.name %></div>
+  <% @category.furnitures.shuffle.each do |furniture| %>
+  <div class="furnitures-index__furniture">
+    <div class="furnitures-index__furniture--image">
+      <%= link_to image_tag(furniture.image_general, class: "furnitures-index__furniture--image-1"), furniture_path(furniture)%>
+    </div>
+    <%= link_to furniture.name, furniture_path(furniture), class: "furnitures-index__furniture--name" %>
+  </div>
+  <% end %>
+
+</section>
+<%= render 'layouts/footer' %>
