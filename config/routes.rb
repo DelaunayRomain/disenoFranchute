@@ -5,5 +5,4 @@ Rails.application.routes.draw do
   get 'collection' => 'pages#collection'
   resources :furnitures, only: [:show, :index]
   resources :categories, only: [:show]
-  resources :collections, only: [:show]
 end

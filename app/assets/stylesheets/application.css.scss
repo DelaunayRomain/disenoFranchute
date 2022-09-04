@@ -19,20 +19,48 @@ $color-nav-2: rgba(30, 144, 255, .95);
 $primary-light: #e8d9c9;
 $primary-dark: #f9d9b8;
 
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+      @media screen and (max-width: 37.5em) { @content };
+  }
+
+    @if $breakpoint == tab-port {
+      @media screen and (max-width: 56.25em) { @content };
+  }
+
+    @if $breakpoint == tab-land {
+      @media screen and (max-width: 75em) { @content };
+  }
+
+    @if $breakpoint == big-desktop {
+      @media screen and (min-width: 112.5em) { @content };
+  }
+}
+
 
  *,
  *::after,
  *::before {
    margin: 0;
-   paddin: 0;
+   padding: 0;
    box-sizing: inherit;
+ }
+
+ ::selection {
+   background-color: $color-nav-1;
+   color: #000000;
  }
 
  html {
    font-size: 62.5%;
    font-family: 'Roboto', sans-serif;
-   font-weight: bolder;
+
+   @include respond(tab-land) {font-size: 56.25%;}
+   @include respond(tab-port) {font-size: 50%;}
+   @include respond(phone) {font-size: 45%;}
+   @include respond(big-desktop) {font-size: 75%;}
  }
+
 
  body {
    box-sizing: border-box;
@@ -59,22 +87,78 @@ $primary-dark: #f9d9b8;
    z-index: 1000;
    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.05);
 
+   @media (max-width: 75em) {
+     background-image: linear-gradient(130deg, $color-nav-1 0%, $color-nav-1 73%, rgba(255,255,255, 0.9) 73%);
+   };
+
+   @media (max-width: 56.25em) {
+     background-image: linear-gradient(130deg, $color-nav-1 0%, $color-nav-1 100%);
+   };
+
+   @media (max-width: 37.5em) {
+     background-image: linear-gradient(130deg, $color-nav-1 0%, $color-nav-1 100%);
+     height: 15rem;
+     position: relative;
+     padding-left: 0;
+   };
+
    &__link,
    &__dropdown {
      text-decoration: none;
      text-transform: uppercase;
-     display: inline;
+     display: inline-block;
      color: #fff;
      margin-right: 4rem;
      font-size: 2rem;
      padding-top: 2rem;
      transition: all .3s;
 
+     @media (max-width: 37.5em) {
+       font-size: 2.8rem;
+       margin-right: 0;
+       padding-top: 0;
+     };
+
      &:hover {
        border-bottom: 1px solid #fff;
        padding-bottom: 3px;
      }
    }
+
+   &__dropdown {
+     @media (max-width: 37.5em) {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 1rem;
+      }
+   }
+
+
+   &__link--1 {
+     @media (max-width: 37.5em) {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+    }
+
+    &__link--2 {
+      @media (max-width: 37.5em) {
+         position: absolute;
+         top: 50%;
+         right: 1rem;
+         transform: translateY(-50%);
+       }
+     }
+
+   &__link--3 {
+     @media (max-width: 37.5em) {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+      }
+    }
 
    &__dropbtn {
       background-color: transparent;
@@ -120,9 +204,13 @@ $primary-dark: #f9d9b8;
      transform: translateY(-3.5rem);
      padding-right: 5rem;
      width: auto;
-     display: inline;
+     display: inline-block;
      float: right;
      animation: moveInLeft 1.5s;
+
+     @media (max-width: 56.25em) {
+       visibility: hidden;
+     };
    }
  }
 
@@ -130,6 +218,16 @@ $primary-dark: #f9d9b8;
    height: 10rem;
    background-image: linear-gradient(130deg, rgba(255,255,255, 0.9) 0%, rgba(255,255,255, 0.9) 35%, $color-nav-1 35%);
    overflow: hidden;
+   position: relative;
+
+   @media (max-width: 75em) {
+     background-image: linear-gradient(130deg, rgba(255,255,255, 0.9) 0%, rgba(255,255,255, 0.9) 30%, $color-nav-1 30%);
+   };
+
+   @media (max-width: 37.5em) {
+     background-image: linear-gradient(130deg, rgba(255,255,255, 0.9) 0%, rgba(255,255,255, 0.9) 40%, $color-nav-1 40%);
+     transform: translateY(-13rem);
+   };
 
    &__logo {
      height: 180%;
@@ -138,6 +236,10 @@ $primary-dark: #f9d9b8;
      width: auto;
      display: inline;
      float: left;
+
+     @media (max-width: 56.25em) {
+       padding-left: 0;
+     };
    }
 
    &__instagram,
@@ -148,6 +250,40 @@ $primary-dark: #f9d9b8;
      padding-right: 5rem;
      line-height: 3.5rem;
      padding-top: 3rem;
+   }
+
+   &__instagram {
+
+     @media (max-width: 56.25em) {
+       font-size: 2.3rem;
+       padding-right: 2rem;
+     }
+
+     @media (max-width: 37.5em) {
+       position: absolute;
+       top: 0;
+       right: 0;
+       padding-top: 1.3rem;
+       font-size: 2rem;
+       padding-right: 3rem;
+     }
+   }
+
+   &__mail {
+
+     @media (max-width: 56.25em) {
+       font-size: 2.3rem;
+       padding-right: 2rem;
+     }
+
+     @media (max-width: 37.5em) {
+       position: absolute;
+       bottom: 1.3rem;
+       right: 0;
+       padding-top: 0;
+       font-size: 2rem;
+       padding-right: 3rem;
+     }
    }
 
    &__instagram-link {
@@ -166,30 +302,52 @@ $primary-dark: #f9d9b8;
   visibility: hidden;
   position: fixed;
 
+  @media (max-width: 37.5em) {
+    transform: translateY(-15rem);
+  }
+
   &__content {
     position: absolute;
-    width: 70%;
-    height: 70%;
+    display: table;
+    width: 100rem;
+    height: auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 2rem;
     color: #fff;
     border: 4px;
-    padding: 4rem 10rem;
+    padding: 2rem 3rem;
     border-color: #fff;
     border-style: solid;
     border-radius: 1rem;
     background-image: linear-gradient(to bottom right, $primary-dark, $primary-light);
+    background-size: contain;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+
+    @media (max-width: 75em) {
+      width: 89rem;
+    }
+
+    @media (max-width: 56.25em) {
+      width: 55rem;
+    }
+
+    @media (max-width: 37.5em) {
+      width: 40rem;
+    }
   }
 
   &__text {
-    position: absolute;
-    top: 13%;
-    right: 3.5%;
-    width: 58%;
-
+    float: right;
+    width: 65%;
     text-align: justify;
+    padding: auto 3rem;
+
+    @media (max-width: 56.25em) {
+      float: none;
+      width: 100%;
+    }
 
     &-1 {
       padding-bottom: 2rem;
@@ -197,14 +355,25 @@ $primary-dark: #f9d9b8;
   }
 
   &__image {
-    position: absolute;
-    top: 13%;
-    left: 3.5%;
+    float: left;
+    width: 33%;
 
+    @media (max-width: 75em) {
+      padding-top: 4rem;
+    }
+
+    @media (max-width: 56.25em) {
+      display: none;
+    }
 
     &-1 {
-      width: 40%;
+      width: 100%;
       border-radius: 3px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+
+      @media (max-width: 56.25em) {
+        display: none;
+      }
     }
   }
 

@@ -2,6 +2,7 @@
 <%= render 'layouts/popup', :locals => {:destination => '#furnitures-index'}%>
 
 <section class="furnitures-index" id="furnitures-index">
+  <div class="furnitures-index__name">Diseño Franchute</div>
   <div class="furnitures-index__paginate"><%= will_paginate @furnitures, class: "apple_pagination" %></div>
   <% @furnitures.shuffle.each do |furniture| %>
   <div class="furnitures-index__furniture">
