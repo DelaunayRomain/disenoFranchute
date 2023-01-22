@@ -7,7 +7,9 @@
   <h1 class="furniture__heading"><%= @furniture.name %></h1>
   <div class="furniture__image"><%= image_tag (@furniture.image_general), class: "furniture__image--1"%></div>
   <div class="furniture__image"><%= image_tag (@furniture.image_detail), class: "furniture__image--2"%></div>
-  <p class="furniture__description"><%= @furniture.description %></p>
-  <p class="furniture__dimensions">Dimensiones: <%= @furniture.dimensions %></p>
+  <div class="furniture__text">
+    <p class="furniture__text--description"><%= @furniture.description %></p>
+    <p class="furniture__text--dimensions">Dimensiones: <%= @furniture.dimensions %></p>
+  </div>
 </section>
 <%= render 'layouts/footer' %>

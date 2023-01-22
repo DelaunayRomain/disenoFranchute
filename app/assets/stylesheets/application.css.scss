@@ -16,8 +16,8 @@
 $color-nav-1: rgba(255, 215, 0, .95);
 $color-nav-2: rgba(30, 144, 255, .95);
 
-$primary-light: #e8d9c9;
-$primary-dark: #f9d9b8;
+$primary-light: rgba(57, 54, 50, 0.8);
+$primary-dark: rgba(57, 54, 50, 0.8);
 
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
@@ -82,21 +82,21 @@ $primary-dark: #f9d9b8;
    padding-left: 5rem;
    height: 10rem;
    width: 100%;
-   background-image: linear-gradient(130deg, $color-nav-1 0%, $color-nav-1 65%, rgba(255,255,255, 0.9) 65%);
+   background-image: linear-gradient(130deg, $color-nav-1 0%, rgba(255, 48, 0, 96%) 65%, rgba(255,255,255, 0.9) 65%);
    position: fixed;
    z-index: 1000;
    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.05);
 
    @media (max-width: 75em) {
-     background-image: linear-gradient(130deg, $color-nav-1 0%, $color-nav-1 73%, rgba(255,255,255, 0.9) 73%);
+     background-image: linear-gradient(130deg, $color-nav-1 0%, rgba(255, 48, 0, 96%) 78%, rgba(255,255,255, 0.9) 78%);
    };
 
-   @media (max-width: 56.25em) {
-     background-image: linear-gradient(130deg, $color-nav-1 0%, $color-nav-1 100%);
+   @media (max-width: 60em) {
+     background-image: linear-gradient(130deg, $color-nav-1 0%, rgba(255, 48, 0, 96%) 100%);
    };
 
    @media (max-width: 37.5em) {
-     background-image: linear-gradient(130deg, $color-nav-1 0%, $color-nav-1 100%);
+     background-image: linear-gradient(130deg, $color-nav-1 0%, rgba(255, 48, 0, 96%) 100%);
      height: 15rem;
      position: relative;
      padding-left: 0;
@@ -108,10 +108,11 @@ $primary-dark: #f9d9b8;
      text-transform: uppercase;
      display: inline-block;
      color: #fff;
-     margin-right: 4rem;
-     font-size: 2rem;
+     margin-right: 3rem;
+     font-size: 1.8rem;
      padding-top: 2rem;
      transition: all .3s;
+     font-family: 'Unbounded';
 
      @media (max-width: 37.5em) {
        font-size: 2.8rem;
@@ -126,6 +127,8 @@ $primary-dark: #f9d9b8;
    }
 
    &__dropdown {
+     font-family: 'Unbounded', sans-serif;
+
      @media (max-width: 37.5em) {
         position: absolute;
         top: 50%;
@@ -177,6 +180,10 @@ $primary-dark: #f9d9b8;
        background-color: #f0e9e0;
        min-width: 16rem;
        padding-right: 2rem;
+       padding-top: 1.5rem;
+       padding-bottom: 1.5rem;
+       padding-left: 1rem;
+       border-left: 0.5rem solid $color-nav-1;
        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
        z-index: 5000;
        list-style: none;
@@ -202,13 +209,13 @@ $primary-dark: #f9d9b8;
    &__logo {
      height: 180%;
      transform: translateY(-3.5rem);
-     padding-right: 5rem;
+     padding-right: 3.5rem;
      width: auto;
      display: inline-block;
      float: right;
      animation: moveInLeft 1.5s;
 
-     @media (max-width: 56.25em) {
+     @media (max-width: 60em) {
        visibility: hidden;
      };
    }
@@ -216,17 +223,24 @@ $primary-dark: #f9d9b8;
 
  .footer {
    height: 10rem;
-   background-image: linear-gradient(130deg, rgba(255,255,255, 0.9) 0%, rgba(255,255,255, 0.9) 35%, $color-nav-1 35%);
+   background-image: linear-gradient(130deg, rgba(255,255,255, 0.9) 0%, rgba(255,255,255, 0.9) 35%, $color-nav-1 35%, rgba(255, 48, 0, 96%));
    overflow: hidden;
    position: relative;
+  font-family: 'Unbounded';
+
 
    @media (max-width: 75em) {
-     background-image: linear-gradient(130deg, rgba(255,255,255, 0.9) 0%, rgba(255,255,255, 0.9) 30%, $color-nav-1 30%);
+     background-image: linear-gradient(130deg, rgba(255,255,255, 0.9) 0%, rgba(255,255,255, 0.9) 35%,  $color-nav-1 35%, rgba(255, 48, 0, 96%));
+   };
+
+   @media (max-width: 56.25em) {
+     background-image: linear-gradient(130deg, rgba(255,255,255, 0.9) 0%, rgba(255,255,255, 0.9) 26%, $color-nav-1, $color-nav-1 26%, rgba(255, 48, 0, 96%));
    };
 
    @media (max-width: 37.5em) {
-     background-image: linear-gradient(130deg, rgba(255,255,255, 0.9) 0%, rgba(255,255,255, 0.9) 40%, $color-nav-1 40%);
-     transform: translateY(-13rem);
+     background-image: linear-gradient(130deg, rgba(255,255,255, 0.9) 0%, rgba(255,255,255, 0.9) 35%,  $color-nav-1 35%, rgba(255, 48, 0, 96%));
+     //transform: translateY(-13rem);
+
    };
 
    &__logo {
@@ -246,7 +260,7 @@ $primary-dark: #f9d9b8;
    &__mail {
      float: right;
      color: #fff ;
-     font-size: 2.5rem;
+     font-size: 2.2rem;
      padding-right: 5rem;
      line-height: 3.5rem;
      padding-top: 3rem;
@@ -255,7 +269,7 @@ $primary-dark: #f9d9b8;
    &__instagram {
 
      @media (max-width: 56.25em) {
-       font-size: 2.3rem;
+       font-size: 1.95rem;
        padding-right: 2rem;
      }
 
@@ -272,7 +286,7 @@ $primary-dark: #f9d9b8;
    &__mail {
 
      @media (max-width: 56.25em) {
-       font-size: 2.3rem;
+       font-size: 1.95rem;
        padding-right: 2rem;
      }
 
